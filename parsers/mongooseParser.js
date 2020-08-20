@@ -4,8 +4,8 @@ const { getMongooseDataType } = require('../helpers/mongooseHelper');
 const toMongooseConsole = (jsonObject, schemaName) => {
     let name;
     let count = 0;
-    !schemaName ? name = "new" : name = schemaName.toLowerCase().replace(/\s+/g, '')
-    console.log("const mongoose = require('mongoose')");
+    !schemaName ? name = "new" : name = schemaName.toLowerCase().replace(/\s+/g, '');
+    console.log("const mongoose = require('mongoose');");
     console.log("const " + name + "Schema = new mongoose.Schema({");
 
     for (var key of Object.keys(jsonObject)) {
@@ -25,9 +25,9 @@ const toMongooseConsole = (jsonObject, schemaName) => {
 //Returns an array: Outputs the model class for mongoose based on the json data given.
 const toMongooseArray = (jsonObject, schemaName) => {
     let name;
-    !schemaName ? name = "new" : name = schemaName.toLowerCase().replace(/\s+/g, '')
+    !schemaName ? name = "new" : name = schemaName.toLowerCase().replace(/\s+/g, '');
     let code = [];
-    code.push("const mongoose = require('mongoose')");
+    code.push("const mongoose = require('mongoose');");
     code.push("const " + name + "Schema = new mongoose.Schema({");
 
     for (var key of Object.keys(jsonObject)) {
@@ -43,10 +43,6 @@ const toMongooseArray = (jsonObject, schemaName) => {
     return code;
 }
 
-//TODO: Dynamically generate schema
-/* const createMongooseSchema = (jsonObject) => {
-    return new Schema({})
-} */
 
 module.exports.toMongooseConsole = toMongooseConsole;
 module.exports.toMongooseArray = toMongooseArray;
