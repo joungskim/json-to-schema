@@ -65,7 +65,7 @@ Example:
 
 ```OUTPUT```
 ```js
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const newSchema = new mongoose.Schema({
 a: {
 type: String,
