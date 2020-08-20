@@ -87,6 +87,7 @@ e: {
 type: Schema.Types.Mixed,
 required: false,
 },
+});
 module.exports = mongoose.model('new', userSchema);
 
 Properties Count: 5
